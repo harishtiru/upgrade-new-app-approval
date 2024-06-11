@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: student-web-app
-        image: harishtiru/student-web:v1
+        image: harishtiru/student-web:${BUILD_ID}
         ports:
         - containerPort: 3000
         livenessProbe:
