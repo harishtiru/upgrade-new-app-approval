@@ -41,5 +41,5 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3000
-      nodePort: 30000 # Choose any available port number between 30000 and 32767
+      nodePort: ${portno} # Choose any available port number between 30000 and 32767
   type: NodePort
