@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: student-web-app
+  name: ${appname}
 spec:
   replicas: 5
   strategy:
@@ -11,15 +11,15 @@ spec:
       maxUnavailable: 0
   selector:
     matchLabels:
-      app: student-web-app
+      app: ${appname}
   template:
     metadata:
       labels:
-        app: student-web-app
+        app: ${appname}
     spec:
       containers:
-      - name: student-web-app
-        image: harishtiru/student-webapp:v${BUILD_ID}
+      - name: ${appname}
+        image: harishtiru/${appname}:v${BUILD_ID}
         ports:
         - containerPort: 3000
         livenessProbe:
